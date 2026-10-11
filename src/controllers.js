@@ -2,7 +2,7 @@
 let posts = [
     {
         id: 1,
-        test: "Hello world!"
+        text: "Hello world!"
     }
 ]
 
@@ -54,7 +54,7 @@ export function createPost(req, res) {
 
 
     const newPost = {id: nextId++, text: text.trim()};
-    post.push(newPost)
+    posts.push(newPost)
 
     res.status(201).json({
         message: "Post created successfully",
@@ -74,7 +74,7 @@ export function updatePost(req, res) {
     }
 
     // getting text
-    const text = req.body;
+    const { text } = req.body;
     if (invalidText(text)) {
         return res.status(400).json({
             message: "Please enter valid text"
@@ -83,7 +83,7 @@ export function updatePost(req, res) {
 
 
     // updating post
-    post.text = text;
+    post.text = text.trim();
     res.json(post)
 }
 

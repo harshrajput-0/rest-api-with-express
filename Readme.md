@@ -9,7 +9,7 @@ A simple REST API built with Node.js and Express.js to perform CRUD (Create, Rea
 - Create a new post
 - Update an existing post
 - Delete a post
-- Validate post text
+- Validate post text 
 
 
 ## Tech Stack
